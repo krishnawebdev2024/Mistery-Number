@@ -1,85 +1,76 @@
 import React, { useState } from "react";
 
 const Gamelogic = () => {
-  //State holds Errormassage
   const [errorMessage, setErrorMessage] = useState("");
-  // State for rolling number
   const [rollingNumber, setRollingNumber] = useState("");
-
-  // State to hold player's guess
   const [playerGuess, setPlayerGuess] = useState("");
-
-  // State to hold the computer's generated number
   const [computerNumber, setComputerNumber] = useState("");
-
-  // State to hold the result (W or L)
   const [result, setResult] = useState("");
 
-  // Function to generate a random number between 1 and 6
   const generateRandomNumber = () => {
-    return Math.floor(Math.random() * 6) + 1; // Generates a number between 1 and 6
+    return Math.floor(Math.random() * 6) + 1;
   };
 
-  // Function to handle the player input
   const handleInputChange = (e) => {
-    setPlayerGuess(e.target.value); // Update player guess from input field
+    setPlayerGuess(e.target.value);
   };
 
   const handlePlay = () => {
-    const playerNum = parseInt(playerGuess); // Convert input to number
+    const playerNum = parseInt(playerGuess);
 
     if (isNaN(playerNum) || playerNum < 1 || playerNum > 6) {
-      setErrorMessage("Number must be between 1-6"); // Set error message if input is invalid
-      return; // Exit the function early if invalid input
+      setErrorMessage("Number must be between 1-6");
+      return;
     }
 
-    setErrorMessage(""); // Clear any previous error if input is valid
-    const randomNum = generateRandomNumber(); // Generate computer's random number
-    setComputerNumber(randomNum); // Set computer's number for display
+    setErrorMessage("");
+    const randomNum = generateRandomNumber();
+    setComputerNumber(randomNum);
 
     if (playerNum === randomNum) {
-      setResult("W"); // Win if numbers match
+      setResult("W");
     } else {
-      setResult("L"); // Lose if numbers don't match
+      setResult("L");
     }
   };
 
   return (
-    <div className="flex justify-center">
-      <div className="game-container">
-        {/* Input for player to type their guess */}
+    <div className="flex items-center justify-center h-screen bg-gradient-to-r from-indigo-500 to-purple-500">
+      <div className="bg-white shadow-md rounded-lg p-8 max-w-sm w-full text-center">
+        <h2 className="text-2xl font-semibold mb-4">Guess the Number</h2>
+
         <input
           type="text"
-          placeholder="number 1-6"
-          className="input input-bordered w-full max-w-xs"
+          placeholder="Enter a number 1-6"
+          className="input input-bordered w-full p-2 mb-4 text-center border-2 border-indigo-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
           value={playerGuess}
-          onChange={handleInputChange} // Update the guess as player types
+          onChange={handleInputChange}
         />
 
-        {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+        {errorMessage && <p className="text-red-500 mb-4">{errorMessage}</p>}
 
-        {/* Button for player to submit their guess */}
         <button
-          className="btn btn-success"
-          onClick={handlePlay} // Trigger the play logic when button is clicked
+          className="px-6 py-2 mb-4 text-white bg-indigo-600 hover:bg-indigo-700 rounded-md shadow-md transition duration-300"
+          onClick={handlePlay}
         >
           Play
         </button>
 
-        {/* Input to display computer's generated number (read-only) */}
         <input
           type="text"
           placeholder="Computer's number"
-          className="input input-bordered w-full max-w-xs"
-          value={computerNumber} // Display the computer's number here
-          readOnly // Prevent typing in this field
+          className="input input-bordered w-full p-2 mb-4 text-center border-2 border-indigo-300 rounded bg-gray-100"
+          value={computerNumber}
+          readOnly
         />
 
-        {/* Display the result (W or L) */}
         {result && (
-          <p className="result">
-            {result === "W" ? "You Win!" : "You Lose!"}{" "}
-            {/* Show W or L result */}
+          <p
+            className={`text-lg font-bold mt-4 ${
+              result === "W" ? "text-green-500" : "text-red-500"
+            }`}
+          >
+            {result === "W" ? "You Win!" : "You Lose!"}
           </p>
         )}
       </div>

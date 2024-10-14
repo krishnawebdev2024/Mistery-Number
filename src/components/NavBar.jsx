@@ -33,6 +33,12 @@ export const NavBar = () => (
       >
         Let's Play
       </Link>
+      <Link
+        to="/lets-dice"
+        className="text-white px-3 py-2 rounded-lg hover:text-sky-800 hover:bg-white hover:shadow-md hover:scale-105 transition duration-300"
+      >
+        Let's Dice
+      </Link>
     </div>
   </nav>
 );
