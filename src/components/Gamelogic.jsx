@@ -45,41 +45,44 @@ const Gamelogic = () => {
   };
 
   return (
-    <div className="game-container">
-      {/* Input for player to type their guess */}
-      <input
-        type="text"
-        placeholder="number 1-6"
-        className="input input-bordered w-full max-w-xs"
-        value={playerGuess}
-        onChange={handleInputChange} // Update the guess as player types
-      />
+    <div className="flex justify-center">
+      <div className="game-container">
+        {/* Input for player to type their guess */}
+        <input
+          type="text"
+          placeholder="number 1-6"
+          className="input input-bordered w-full max-w-xs"
+          value={playerGuess}
+          onChange={handleInputChange} // Update the guess as player types
+        />
 
-      {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+        {errorMessage && <p className="text-red-500">{errorMessage}</p>}
 
-      {/* Button for player to submit their guess */}
-      <button
-        className="btn btn-success"
-        onClick={handlePlay} // Trigger the play logic when button is clicked
-      >
-        Play
-      </button>
+        {/* Button for player to submit their guess */}
+        <button
+          className="btn btn-success"
+          onClick={handlePlay} // Trigger the play logic when button is clicked
+        >
+          Play
+        </button>
 
-      {/* Input to display computer's generated number (read-only) */}
-      <input
-        type="text"
-        placeholder="Computer's number"
-        className="input input-bordered w-full max-w-xs"
-        value={computerNumber} // Display the computer's number here
-        readOnly // Prevent typing in this field
-      />
+        {/* Input to display computer's generated number (read-only) */}
+        <input
+          type="text"
+          placeholder="Computer's number"
+          className="input input-bordered w-full max-w-xs"
+          value={computerNumber} // Display the computer's number here
+          readOnly // Prevent typing in this field
+        />
 
-      {/* Display the result (W or L) */}
-      {result && (
-        <p className="result">
-          {result === "W" ? "You Win!" : "You Lose!"} {/* Show W or L result */}
-        </p>
-      )}
+        {/* Display the result (W or L) */}
+        {result && (
+          <p className="result">
+            {result === "W" ? "You Win!" : "You Lose!"}{" "}
+            {/* Show W or L result */}
+          </p>
+        )}
+      </div>
     </div>
   );
 };
