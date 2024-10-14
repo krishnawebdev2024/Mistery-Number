@@ -12,8 +12,8 @@ const App = () => {
       <Router>
         <NavBar />
         <Routes>
-          <Route path="/lets-play" element={<Gamelogic />} />
           <Route path="/" element={<Home />} />
+          <Route path="/lets-play" element={<Gamelogic />} />
           <Route path="/lets-dice" element={<DiceGame />} />
         </Routes>
         <Footer />
