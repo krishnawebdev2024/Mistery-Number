@@ -6,23 +6,17 @@ import Gamelogic from "./components/Gamelogic"; // Adjust the path based on your
 
 const App = () => {
   return (
-    <div className="App">
-    
-     <div>
-    <NavBar />
 
-    <div>content</div>
+    <div>
+      <NavBar />
 
-    <Footer />
-  </div>
-)
-      <h1 className="text-2xl font-bold text-center">Mystery-Number</h1>
       <div className="flex justify-center">
-        <Gamelogic />
-      </div>
+        <Gamelogic /></div>
+
+      <Footer />
     </div>
+
   );
 };
 
 export default App;
-
