@@ -1,0 +1,164 @@
+/* RollDice.css */
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+#cube .front {
+  transform: translateZ(100px);
+}
+
+#cube .back {
+  transform: rotateX(-180deg) translateZ(100px);
+}
+
+#cube .right {
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+#cube .left {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+#cube .top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+#cube .bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+.container {
+  position: relative;
+  margin: 0 auto 40px;
+  perspective: 800px;
+  perspective-origin: 50% 50%;
+}
+
+#cube {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+}
+
+#cube:hover {
+  cursor: pointer;
+}
+
+#cube div {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(177, 177, 177, 1) 110%
+  );
+
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 0px solid #eaeaea;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 50px 0;
+  border-radius: 25px;
+}
+
+.dot {
+  display: block;
+  position: absolute;
+  background: radial-gradient(circle, #000000, #252525);
+  border-radius: 50%;
+  width: 15%; /* Set width relative to the size of the cube */
+  height: 15%; /* Set height relative to the size of the cube */
+}
+
+/* Adjust the dot positions using percentages for scaling */
+.front .dot1 {
+  top: 42.5%;
+  left: 42.5%;
+}
+.back .dot1 {
+  top: 21.25%; /* Top-left */
+  left: 21.25%;
+}
+.back .dot2 {
+  top: 63.75%; /* Bottom-right */
+  left: 63.75%;
+}
+.right .dot1 {
+  top: 21.25%; /* Top-left */
+  left: 21.25%;
+}
+.right .dot2 {
+  top: 42.5%; /* Center */
+  left: 42.5%;
+}
+.right .dot3 {
+  top: 63.75%; /* Bottom-right */
+  left: 63.75%;
+}
+.left .dot1 {
+  top: 21.25%; /* Top-left */
+  left: 21.25%;
+}
+.left .dot2 {
+  top: 21.25%; /* Top-right */
+  left: 63.75%;
+}
+.left .dot3 {
+  top: 63.75%; /* Bottom-left */
+  left: 21.25%;
+}
+.left .dot4 {
+  top: 63.75%; /* Bottom-right */
+  left: 63.75%;
+}
+.top .dot1 {
+  top: 21.25%; /* Top-left */
+  left: 21.25%;
+}
+.top .dot2 {
+  top: 21.25%; /* Top-right */
+  left: 63.75%;
+}
+.top .dot3 {
+  top: 42.5%; /* Center */
+  left: 42.5%;
+}
+.top .dot4 {
+  top: 63.75%; /* Bottom-left */
+  left: 21.25%;
+}
+.top .dot5 {
+  top: 63.75%; /* Bottom-right */
+  left: 63.75%;
+}
+
+.bottom .dot1 {
+  top: 21.25%; /* Top-left */
+  left: 21.25%;
+}
+.bottom .dot2 {
+  top: 21.25%; /* Top-right */
+  left: 63.75%;
+}
+.bottom .dot3 {
+  top: 42.5%; /* Middle-left */
+  left: 21.25%;
+}
+.bottom .dot4 {
+  top: 42.5%; /* Middle-right */
+  left: 63.75%;
+}
+.bottom .dot5 {
+  top: 63.75%; /* Bottom-left */
+  left: 21.25%;
+}
+.bottom .dot6 {
+  top: 63.75%; /* Bottom-right */
+  left: 63.75%;
+}
