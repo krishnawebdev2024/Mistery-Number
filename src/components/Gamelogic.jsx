@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import bg from "../assets/bg.jpg";
 
 const Gamelogic = () => {
   const [errorMessage, setErrorMessage] = useState("");
@@ -35,7 +36,10 @@ const Gamelogic = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gradient-to-r from-indigo-500 to-purple-500">
+    <div
+      className="flex items-center justify-center h-screen bg-gradient-to-r from-indigo-500 to-purple-500"
+      style={{ height: "calc(100vh - 100px)", backgroundImage: `url(${bg})` }}
+    >
       <div className="bg-white shadow-md rounded-lg p-8 max-w-sm w-full text-center">
         <h2 className="text-2xl font-semibold mb-4">Guess the Number</h2>
 
