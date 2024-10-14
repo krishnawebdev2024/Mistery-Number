@@ -20,7 +20,6 @@ const Home = () => {
         >
           Let's Play
         </Link>
-        ;
       </div>
     </div>
   );
