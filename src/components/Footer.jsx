@@ -1,7 +1,4 @@
-export const Footer = () =>
-
-(
-
+export const Footer = () => (
     <footer className="fixed bottom-0 left-0 w-full bg-sky-700 text-white">
         <div className="flex justify-between items-center w-full px-4 py-2">
             <p>&copy; 2024 Mystery Number. All rights reserved.</p>
@@ -32,5 +29,4 @@ export const Footer = () =>
             </div>
         </div>
     </footer>
-
 );
